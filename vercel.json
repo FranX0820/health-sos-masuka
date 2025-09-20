@@ -2,22 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "app/api/**/*.ts",
-      "use": "@vercel/node",
-      "config": {
-        "runtime": "vercel-nodejs@18.12.1"
-      }
-    },
-    {
       "src": "dist/**/*",
       "use": "@vercel/static"
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/app/api/$1.ts"
-    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
